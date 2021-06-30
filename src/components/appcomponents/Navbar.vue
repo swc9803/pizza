@@ -66,7 +66,7 @@ nav {
   border-bottom: 1px solid rgb(53, 73, 94);
 }
 .dropdown-menu {
-  background: rgb(40, 40, 40);
+  background: rgb(33, 37, 41);
 }
 .hr {
   border-top: 1px solid rgb(255, 255, 255);

@@ -8,34 +8,34 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <!-- <img src="..." class="d-block w-100" alt="..."> -->
+          <img src="@/assets/curry1.jpg" class="d-block w-100" alt="chickencurry">
           <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h5>치킨 카레</h5>
+            <p>치킨 카레 이미지1입니다.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <!-- <img src="..." class="d-block w-100" alt="..."> -->
+          <img src="@/assets/curry2.jpg" class="d-block w-100" alt="curry2">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+            <h5>한국식 카레</h5>
+            <p>한국식 카레 이미지2입니다.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <!-- <img src="..." class="d-block w-100" alt="..."> -->
+          <img src="@/assets/curry3.jpg" class="d-block w-100" alt="curry3">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+            <h5>카츠동 카레</h5>
+            <p>카츠동 카레 이미지3입니다.</p>
           </div>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden">이전</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden">다음</span>
       </button>
     </div>
   </div>
@@ -49,6 +49,6 @@ export default {
 </script>
 <style scoped>
 .slide {
-  height: 500px;
+  height: 600px;
 }
 </style>

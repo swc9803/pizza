@@ -1,5 +1,5 @@
 <template>
-  <div @click="moveToHome" style="cursor: pointer">
+  <div @click="moveToHome" class="mt-2" style="cursor: pointer">
     <svg width="93" height="93" viewBox="0 0 93 93" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_d)">
         <circle cx="44.5" cy="42.5" r="42.5" fill="#F0F0F0"/>
