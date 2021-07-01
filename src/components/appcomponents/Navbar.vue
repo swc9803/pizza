@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
-      <Symbol />
+      <div>
+        <Symbol />
+      </div>
       <!-- 창 작을때 -->
       <div>
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
