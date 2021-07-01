@@ -1,5 +1,5 @@
 <template>
-  <div class="slide mt-4 mb-4">
+  <div class="slide mt-4">
     <div id="carouselExampleCaptions" class="carousel" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -43,6 +43,7 @@
       </button>
     </div>
   </div>
+  dd
 </template>
 
 <script>

@@ -17,5 +17,8 @@ export default {
   text-align: center;
   font-size: 16px;
   color: rgb(228, 228, 228);
+  margin: 100px 0 0 0;
+  position: inherit;
+  bottom: 0;
 }
 </style>

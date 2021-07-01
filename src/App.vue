@@ -35,9 +35,9 @@ export default {
   left:0;
   position: absolute;
   width:100%;
-  height:100%;
   color: white;
 }
+/* app height 200%? 컨텐츠 따라 조절해보기 */
 a.router-link-active {
   border-bottom: 2px solid yellow;
 }

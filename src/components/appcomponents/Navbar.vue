@@ -1,11 +1,10 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
+      <Symbol />
+      <SymbolText />
       <div>
-        <Symbol />
-      </div>
-      <!-- 창 작을때 -->
-      <div>
+        <!-- 창 작을때 -->
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
         >
@@ -29,7 +28,7 @@
                   면
                 </router-link>
               </li>
-              <li><hr class="hr dropdown-divider"></li>
+              <li><hr class="dropdown-divider"></li>
               <li class="dropdown-item">
                 <router-link class="nav-link" :to="{ name: 'Side'}">
                   사이드 메뉴
@@ -54,10 +53,13 @@
 </template>
 
 <script>
-import Symbol from '@/components/appcomponents/Symbol'
+import Symbol from '@/components/Symbol'
+import SymbolText from '@/components/SymbolText'
+
 export default {
   components: {
-    Symbol
+    Symbol,
+    SymbolText
   }
 }
 </script>
@@ -70,7 +72,7 @@ nav {
 .dropdown-menu {
   background: rgb(33, 37, 41);
 }
-.hr {
+hr {
   border-top: 1px solid rgb(255, 255, 255);
 }
 </style>
