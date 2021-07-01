@@ -1,6 +1,6 @@
 <template>
   <div>
-    Rise
+    Pizza
   </div>
 </template>
 

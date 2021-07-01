@@ -19,7 +19,7 @@
             </div>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li class="dropdown-item">
-                <router-link class="nav-link" :to="{ name: 'Rise'}">
+                <router-link class="nav-link" :to="{ name: 'Pizza'}">
                   밥
                 </router-link>
               </li>
@@ -53,8 +53,8 @@
 </template>
 
 <script>
-import Symbol from '@/components/Symbol'
-import SymbolText from '@/components/SymbolText'
+import Symbol from '@/components/navbar/Symbol'
+import SymbolText from '@/components/navbar/SymbolText'
 
 export default {
   components: {

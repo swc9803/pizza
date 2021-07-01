@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import Navbar from '@/components/appcomponents/Navbar'
-import Footer from '@/components/appcomponents/Footer'
+import Navbar from '@/components/navbar/Navbar'
+import Footer from '@/components/Footer'
 
 export default {
   components: {

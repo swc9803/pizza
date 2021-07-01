@@ -43,18 +43,32 @@
       </button>
     </div>
   </div>
+  <div class="goMenu mt-4" @click="moveToMenu">
+    메뉴 보러 가기
+  </div>
 </template>
 
 <script>
-export default {
+import { useRouter } from 'vue-router'
 
+export default {
+  setup () {
+    const router = useRouter()
+    const moveToMenu = () => {
+      router.push({
+        name: 'Pizza'
+      })
+    }
+    return {
+      moveToMenu
+    }
+  }
 }
 </script>
 
 <style scoped>
 .slide {
-  max-height: 70%;
-  max-width: 90%;
+  max-width: 72%;
   margin: auto;
   border-radius: 20px;
 }
@@ -65,6 +79,27 @@ export default {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff0000' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z'/%3e%3c/svg%3e");
 }
 p {
-  text-shadow:-1px 0px 0px #000, 1px 0px 0px #000, 0px -1px 0px #000, 0px 1px 0px #000
+  text-shadow:-2px 2px 2px #000, 2px 2px 2px #000, 2px -2px 2px #000, 2px 2px 2px #000
+}
+.goMenu {
+  color: rgba(223,190,106,0.7);
+  border-radius: 50px;
+  padding: 18px 80px 20px;
+  transition: all 0.7s ease-out;
+  background: linear-gradient(270deg, rgba(223,190,106,0.8), rgba(146,111,52,0.8), rgba(34,34,34,0), rgba(34,34,34,0));
+  background-position: 1% 50%;
+  background-size: 300% 300%;
+  border: 1px solid rgba(223,190,106,0.3);
+  margin: auto;
+  display: block;
+  text-align: center;
+  width: 270px;
+  cursor: pointer;
+}
+.goMenu:hover {
+  color: #fff;
+  border: 1px solid rgba(223,190,106,0);
+  color: white;
+  background-position: 99% 50%;
 }
 </style>
