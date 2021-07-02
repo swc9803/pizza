@@ -1,5 +1,5 @@
 <template>
-  <div class="mt">
+  <div>
     <div class="mb-4">
       <Slide />
     </div>
@@ -34,7 +34,5 @@ export default {
 </script>
 
 <style scoped>
-.mt {
-  padding-top: 118px;
-}
+
 </style>

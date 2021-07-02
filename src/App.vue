@@ -3,7 +3,7 @@
     <div>
       <Navbar />
     </div>
-    <div>
+    <div class="mt">
       <router-view/>
     </div>
     <div>
@@ -40,5 +40,8 @@ export default {
 /* app height 200%? 컨텐츠 따라 조절해보기 */
 a.router-link-active {
   border-bottom: 2px solid yellow;
+}
+.mt {
+  padding-top: 118px;
 }
 </style>
