@@ -20,7 +20,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li class="dropdown-item">
                 <router-link class="nav-link" :to="{ name: 'Pizza'}">
-                  밥
+                  피자
                 </router-link>
               </li>
               <li class="dropdown-item">

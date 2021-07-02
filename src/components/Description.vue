@@ -1,5 +1,5 @@
 <template>
-   <div class="description">
+  <div class="description">
     <hr>
     설명
   </div>
