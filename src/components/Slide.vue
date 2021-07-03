@@ -59,6 +59,21 @@ export default {
         name: 'Pizza'
       })
     }
+
+    var beforePosition = document.documentElement.scrollTop
+    document.addEventListener('scroll', function () {
+      var afterPosition = document.documentElement.scrollTop
+      if (afterPosition > 50) {
+        if (beforePosition < afterPosition) {
+          // 스크롤 위로
+        } else {
+          // moveToMenu()
+        }
+      } else {
+        // 평상 시
+      }
+      beforePosition = afterPosition
+    })
     return {
       moveToMenu
     }

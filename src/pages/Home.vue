@@ -6,18 +6,23 @@
     <div>
       <Description />
     </div>
+    <div>
+      <Test />
+    </div>
   </div>
 </template>
 
 <script>
 import Slide from '@/components/Slide'
 import Description from '@/components/Description'
+import Test from '@/components/Test'
 import { useRouter } from 'vue-router'
 
 export default {
   components: {
     Slide,
-    Description
+    Description,
+    Test
   },
   setup () {
     const router = useRouter()
