@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #map {
   width: 500px;
   height: 400px;

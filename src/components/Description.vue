@@ -25,21 +25,14 @@
   </div>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style scoped>
-.content {
-  width: 100%;
-  height: 100px;
-  background: cyan;
+.description {
+  height: 1200px;
+  background: rgb(50, 50, 50);
 }
 .fixed {
   width: 100%;
-  height: 12%;
+  height: 40%;
   background-image: url('~@/assets/pizza.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -49,10 +42,6 @@ export default {
 .hov {
   display: flex;
   justify-content: space-around;
-}
-.description {
-  height: 3000px;
-  background: rgb(50, 50, 50);
 }
 hr {
   height: 4px;
