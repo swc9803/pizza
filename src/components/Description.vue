@@ -4,8 +4,8 @@
     <div style="text-align: center">
       <br><b>The best pizza restaurant in the world</b>
     </div>
-    <img src="@/assets/pizza.png" class="back mt-5" alt="pizza">
-    <div class="hov mt-4">
+    <div class="fixed mt-5" />
+    <div class="hov mt-5">
       <div/><div class="adjust">
         <img src="@/assets/produce.png" class="before1" alt="produce">
         <img src="@/assets/domestic.png" class="after" alt="domestic">
@@ -19,12 +19,8 @@
       <div class="adjust">
         <img src="@/assets/mask.png" class="before3" alt="mask">
         <img src="@/assets/safety.png" class="after" alt="safety">
-        <p class="text">Safety<br>Commitment</p>
+        <p>Safety<br>Commitment</p>
       </div><div/>
-    </div>
-    <div class="click">
-      <img src="@/assets/arrow.png" class="arrow" alt="arrow">
-      <p class="mt-1">그림을 클릭해보세요!</p>
     </div>
   </div>
 </template>
@@ -36,8 +32,19 @@ export default {
 </script>
 
 <style scoped>
-.click {
-  text-align: center;
+.content {
+  width: 100%;
+  height: 100px;
+  background: cyan;
+}
+.fixed {
+  width: 100%;
+  height: 12%;
+  background-image: url('~@/assets/pizza.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 .hov {
   display: flex;
@@ -116,27 +123,8 @@ b {
   background: rgb(0, 0, 0, 0.6);
   opacity: 1;
 }
-.arrow {
-  width: 2%;
-  animation-name: bounce;
-  animation-duration: 1.6s;
-  animation-iteration-count: infinite;
-}
-@keyframes bounce{
-  0%, 100%{
-    margin-top: 0px;
-    animation-timing-function: ease-out;
-  }
-  50%{
-    margin-top: 15px;
-    animation-timing-function: ease-in;
-  }
-}
-.text {
-  font-size: 2.8vw;
-  color: #D3B057;
-}
 p {
+  font-size: 2.8vw;
   color: #D3B057;
   position: relative;
   top: 150%;
