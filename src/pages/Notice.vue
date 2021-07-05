@@ -1,8 +1,10 @@
 <template>
   <div>
+    신메뉴
     <div class="click">
       <img src="@/assets/arrow.png" class="arrow" alt="arrow"><br>
-      <p class="mt-1">그림을 클릭해보세요!</p>
+      <p class="mt-1">자신만의 피자를<br>만들어보세요!</p>
+      메뉴 마우스 호버시 커지게
     </div>
     notice
   </div>
@@ -26,11 +28,11 @@ export default {
 }
 @keyframes bounce{
   0%, 100%{
-    margin-top: 0px;
+    margin-right: 0px;
     animation-timing-function: ease-out;
   }
   50%{
-    margin-top: 15px;
+    margin-right: 15px;
     animation-timing-function: ease-in;
   }
 }

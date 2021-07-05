@@ -7,7 +7,7 @@
       <Description />
     </div>
     <div>
-      <Test />
+      <Menu />
     </div>
   </div>
 </template>
@@ -15,14 +15,14 @@
 <script>
 import Slide from '@/components/Slide'
 import Description from '@/components/Description'
-import Test from '@/components/Test'
+import Menu from '@/components/Menu'
 import { useRouter } from 'vue-router'
 
 export default {
   components: {
     Slide,
     Description,
-    Test
+    Menu
   },
   setup () {
     const router = useRouter()

@@ -28,7 +28,6 @@
 <style scoped>
 .description {
   height: 1200px;
-  background: rgb(50, 50, 50);
 }
 .fixed {
   width: 100%;
