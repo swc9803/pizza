@@ -11,8 +11,11 @@
       <img src="@/assets/menupizza.jpg" class="box" alt="menupizza">
       <img src="@/assets/custom.jpg" class="box" @click="moveToCustom" style="cursor: pointer" alt="custom">
     </div>
-    <div class="right">
-      <div class="click">
+    <div class="flex" style="height: 180px">
+      <div class="box"/>
+      <div class="box"/>
+      <div class="box"/>
+      <div class="click box">
         <img src="@/assets/arrow.png" class="arrow" alt="arrow"><br>
         <p class="mt-1">자신만의 피자를<br>만들어보세요!</p>
       </div>
@@ -43,19 +46,11 @@ export default {
 </script>
 
 <style scoped>
-.right {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 80%;
-  margin: auto;
-}
 .click {
   text-align: center;
 }
 .arrow {
-  width: 20%;
+  width: 7%;
   animation-name: bounce;
   animation-duration: 1.6s;
   animation-iteration-count: infinite;

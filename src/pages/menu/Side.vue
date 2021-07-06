@@ -2,14 +2,14 @@
   <div>
     <Menunavbar />
     <div class="flex mt-4">
-      <img src="@/assets/side.jpg" class="box" alt="side">
-      <img src="@/assets/side.jpg" class="box" alt="side">
-      <img src="@/assets/side.jpg" class="box" alt="side">
-      <img src="@/assets/side.jpg" class="box" alt="side">
-      <img src="@/assets/side.jpg" class="box" alt="side">
-      <img src="@/assets/side.jpg" class="box" alt="side">
-      <img src="@/assets/side.jpg" class="box" alt="side">
-      <img src="@/assets/side.jpg" class="box" alt="side">
+      <img src="@/assets/menuside.jpg" class="box" alt="menuside">
+      <img src="@/assets/menuside.jpg" class="box" alt="menuside">
+      <img src="@/assets/menuside.jpg" class="box" alt="menuside">
+      <img src="@/assets/menuside.jpg" class="box" alt="menuside">
+      <img src="@/assets/menuside.jpg" class="box" alt="menuside">
+      <img src="@/assets/menuside.jpg" class="box" alt="menuside">
+      <img src="@/assets/menuside.jpg" class="box" alt="menuside">
+      <img src="@/assets/menuside.jpg" class="box" alt="menuside">
     </div>
   </div>
 </template>
@@ -35,7 +35,6 @@ export default {
 .box {
   flex: auto;
   width: 300px;
-  height: 300px;
   margin: 20px;
   border-radius: 20px;
 }
