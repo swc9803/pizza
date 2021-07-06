@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 style="color: cyan; width: 63%; margin: auto;">메뉴</h2>
-    <hr>
+    <hr class="m-4">
     <div class="menuflex">
       <div/>
       <div class="flex">

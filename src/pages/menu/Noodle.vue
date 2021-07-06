@@ -1,7 +1,7 @@
 <template>
   <div>
     <Menunavbar />
-    <div class="flex">
+    <div class="flex mt-4">
       <img src="@/assets/menupasta.jpg" class="box" alt="menupasta">
       <img src="@/assets/menupasta.jpg" class="box" alt="menupasta">
       <img src="@/assets/menupasta.jpg" class="box" alt="menupasta">
