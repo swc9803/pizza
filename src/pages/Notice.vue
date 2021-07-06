@@ -4,7 +4,6 @@
     <div class="click">
       <img src="@/assets/arrow.png" class="arrow" alt="arrow"><br>
       <p class="mt-1">자신만의 피자를<br>만들어보세요!</p>
-      메뉴 마우스 호버시 커지게
     </div>
     notice
   </div>

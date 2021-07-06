@@ -1,12 +1,17 @@
 <template>
   <div>
-    Side
+    <Menunavbar />
+    side
   </div>
 </template>
 
 <script>
-export default {
+import Menunavbar from '@/components/Menunavbar'
 
+export default {
+  components: {
+    Menunavbar
+  }
 }
 </script>
 
