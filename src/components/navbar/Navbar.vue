@@ -34,6 +34,11 @@
                   사이드 메뉴
                 </router-link>
               </li>
+              <li class="dropdown-item">
+                <router-link class="nav-link" :to="{ name: 'Custom'}">
+                  커스텀 피자
+                </router-link>
+              </li>
             </ul>
           </li>
           <li class="nav-item active">

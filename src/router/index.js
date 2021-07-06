@@ -3,6 +3,7 @@ import Home from '@/pages/Home'
 import Pizza from '@/pages/menu/Pizza'
 import Noodle from '@/pages/menu/Noodle'
 import Side from '@/pages/menu/Side'
+import Custom from '@/pages/menu/Custom'
 import Info from '@/pages/Info'
 import Notice from '@/pages/Notice'
 
@@ -28,6 +29,11 @@ const router = createRouter({
       path: '/menu/side',
       name: 'Side',
       component: Side
+    },
+    {
+      path: '/menu/custom',
+      name: 'Custom',
+      component: Custom
     },
     {
       path: '/info',
