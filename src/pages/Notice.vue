@@ -2,6 +2,7 @@
   <div class="margin">
     신메뉴
     notice
+    글쓰기 누르면 로그인 화면
   </div>
 </template>
 
