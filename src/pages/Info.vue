@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="margin">
     <h6>테스트용으로 만들었으며 실존하지 않는 가게입니다.</h6>
     <div id="map" />
   </div>
@@ -44,6 +44,10 @@ export default {
 </script>
 
 <style scoped>
+.margin {
+  width: 80%;
+  margin: auto;
+}
 #map {
   width: 500px;
   height: 400px;
