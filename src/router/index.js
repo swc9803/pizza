@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/pages/Home'
 import Pizza from '@/pages/menu/Pizza'
-import Noodle from '@/pages/menu/Noodle'
+import Pasta from '@/pages/menu/Pasta'
 import Side from '@/pages/menu/Side'
 import Custom from '@/pages/menu/Custom'
 import Info from '@/pages/Info'
@@ -21,9 +21,9 @@ const router = createRouter({
       component: Pizza
     },
     {
-      path: '/menu/noodle',
-      name: 'Noodle',
-      component: Noodle
+      path: '/menu/pasta',
+      name: 'Pasta',
+      component: Pasta
     },
     {
       path: '/menu/side',

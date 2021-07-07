@@ -24,7 +24,7 @@
                 </router-link>
               </li>
               <li class="dropdown-item">
-                <router-link class="nav-link" :to="{ name: 'Noodle'}">
+                <router-link class="nav-link" :to="{ name: 'Pasta'}">
                   파스타
                 </router-link>
               </li>

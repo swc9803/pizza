@@ -34,7 +34,7 @@ export default {
 }
 .box {
   flex: auto;
-  width: 300px;
+  width: 265px;
   margin: 20px;
   border-radius: 20px;
 }

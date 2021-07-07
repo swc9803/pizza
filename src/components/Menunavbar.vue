@@ -10,7 +10,7 @@
         </router-link>
       </div>
       <div class="flex">
-        <router-link :to="{ name: 'Noodle'}" style="color: yellow; text-decoration: none">
+        <router-link :to="{ name: 'Pasta'}" style="color: yellow; text-decoration: none">
           파스타
         </router-link>
       </div>
