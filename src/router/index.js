@@ -6,7 +6,8 @@ import Side from '@/pages/menu/Side'
 import Custom from '@/pages/menu/Custom'
 import Info from '@/pages/Info'
 import Notice from '@/pages/Notice'
-import Create from '@/pages/Create'
+import Noticeid from '@/components/Noticeid'
+import NoticeCreate from '@/components/NoticeCreate'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -47,9 +48,15 @@ const router = createRouter({
       component: Notice
     },
     {
-      path: '/create',
-      name: 'Create',
-      component: Create
+      path: '/notice/:id',
+      name: 'Noticeid',
+      component: Noticeid,
+      props: true
+    },
+    {
+      path: '/notice/create',
+      name: 'NoticeCreate',
+      component: NoticeCreate
     }
   ]
 })

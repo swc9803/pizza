@@ -1,17 +1,40 @@
 <template>
   <div class="margin">
-    신메뉴
-    휴일
-    <div v-if="user == ''">
-      <button class="btn btn-primary" @click="openModal">
-        글쓰기
-      </button>
+    <h2 class="notice">공지사항</h2>
+    <div class="but">
+      <div v-if="user == ''">
+        <button class="btn btn-primary" @click="openModal" style="position: absolute;">
+          글쓰기
+        </button>
+      </div>
+      <div v-else>
+        <button class="btn btn-primary" @click="moveToCreate" style="position: absolute;">
+          글쓰기
+        </button>
+      </div>
     </div>
-    <div v-else>
-      <button class="btn btn-primary" @click="moveToCreate">
-        글쓰기
-      </button>
-    </div>
+    <hr>
+    <form class="form">
+      <div v-if="loading" class="form">
+        <div class="spinner-border text-primary" role="status"></div> Loading
+      </div>
+      <table v-else class="table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>제목</th>
+            <th>작성일</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div v-for="(form, i) in forms" :key="form.id">
+            <th>{{ forms.length - i }}</th>
+            <td style="cursor: pointer" @click="moveToPage(form.id)">{{ form.title }}</td>
+            <td>{{ form.createdAt }}</td>
+          </div>
+        </tbody>
+      </table>
+    </form>
     <div v-if="showModal">
       <div class="modal-wrapper" style="color: cyan;">
         <div class="modal-dialog">
@@ -39,20 +62,22 @@
 </template>
 
 <script>
+import { db, auth } from '../../fdb'
 import { useRouter } from 'vue-router'
-import { ref } from 'vue'
-import { auth } from '../../fdb'
+import { ref, onMounted } from 'vue'
 
 export default {
   setup () {
     const router = useRouter()
+    const loading = ref(true)
+    const forms = ref([])
     const showModal = ref(false)
-    const closeModal = () => {
-      showModal.value = false
-    }
     const email = ref('')
     const password = ref('')
 
+    const closeModal = () => {
+      showModal.value = false
+    }
     const openModal = () => {
       showModal.value = true
     }
@@ -60,21 +85,33 @@ export default {
       try {
         await auth.signInWithEmailAndPassword(email.value, password.value)
         alert('관리자 로그인 완료')
-        router.push({ name: 'Create' })
+        router.push({ name: 'NoticeCreate' })
       } catch (err) {
         alert('에러 : ' + err.message)
       }
     }
     const moveToCreate = () => {
       router.push({
-        name: 'Create'
+        name: 'NoticeCreate'
       })
     }
-    const LogOut = async () => {
-      await auth.signOut()
-      closeModal()
-      alert('로그아웃 되었습니다.')
-      router.push({ name: 'Home' })
+    onMounted(async () => {
+      const sn = await db.collection('forms').orderBy('realcreatedAt', 'desc').get()
+      sn.forEach(doc => {
+        const { title, createdAt, realcreatedAt } = doc.data()
+        forms.value.push({
+          id: doc.id, title, createdAt, realcreatedAt
+        })
+      })
+      loading.value = false
+    })
+    const moveToPage = (Noticeid) => {
+      router.push({
+        name: 'Noticeid',
+        params: {
+          id: Noticeid
+        }
+      })
     }
     return {
       showModal,
@@ -84,7 +121,9 @@ export default {
       password,
       Login,
       moveToCreate,
-      LogOut
+      moveToPage,
+      forms,
+      loading
     }
   },
   data () {
@@ -105,8 +144,28 @@ export default {
 </script>
 
 <style scoped>
+table {
+  color: rgb(190, 240, 192);
+  background: rgb(41, 41, 41);
+  margin: 0 auto;
+}
+td {
+  padding: 5px;
+}
+.notice {
+  color: rgba(223,190,106);
+  font-size: 30px;
+  text-align: center;
+}
+.but {
+  float: right;
+}
+hr {
+  height: 4px;
+  background: linear-gradient(270deg, rgba(34,34,34,0), rgba(146,111,52,0.8), rgb(255, 217, 120), rgba(146,111,52,0.8), rgba(34,34,34,0));
+}
 .margin {
-  width: 80%;
+  width: 70%;
   margin: auto;
 }
 .modal-wrapper {
@@ -119,6 +178,7 @@ export default {
   background: rgba(0, 0, 0, 0.5);
 }
 .form {
-  width: 70%;
+  width: 85%;
+  margin: auto;
 }
 </style>

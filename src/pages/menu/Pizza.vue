@@ -5,8 +5,6 @@
       <img src="@/assets/menupizza.jpg" class="box" alt="menupizza">
       <img src="@/assets/menupizza.jpg" class="box" alt="menupizza">
       <img src="@/assets/menupizza.jpg" class="box" alt="menupizza">
-      <!-- <img src="@/assets/menupizza.jpg" class="box" alt="menupizza">
-      <img src="@/assets/menupizza.jpg" class="box" alt="menupizza"> -->
       <img src="@/assets/menupizza.jpg" class="box" alt="menupizza">
       <img src="@/assets/menupizza.jpg" class="box" alt="menupizza">
       <img src="@/assets/custom.jpg" class="box" @click="moveToCustom" style="cursor: pointer" alt="custom">
