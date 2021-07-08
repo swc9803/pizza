@@ -6,6 +6,7 @@ import Side from '@/pages/menu/Side'
 import Custom from '@/pages/menu/Custom'
 import Info from '@/pages/Info'
 import Notice from '@/pages/Notice'
+import Create from '@/pages/Create'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -44,6 +45,11 @@ const router = createRouter({
       path: '/notice',
       name: 'Notice',
       component: Notice
+    },
+    {
+      path: '/create',
+      name: 'Create',
+      component: Create
     }
   ]
 })
