@@ -141,7 +141,7 @@ hr {
   font-weight: bold;
 }
 .content {
-  height: 400px;
+  height: 360px;
 }
 .goNotice {
   color: rgba(223,190,106,0.7);
@@ -165,6 +165,6 @@ hr {
   background-position: 99% 50%;
 }
 .m-5 {
-  height: 533px;
+  height: 514px;
 }
 </style>

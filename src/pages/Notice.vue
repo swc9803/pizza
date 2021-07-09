@@ -18,20 +18,18 @@
       <div v-if="loading" class="m-5">
         <div class="spinner-border text-primary" role="status"></div> Loading
       </div>
-      <table v-else class="table mt-4">
+      <table v-else class="table mt-5">
         <thead>
-          <tr>
-            <td>No.</td>
-            <td>제목</td>
-            <td>작성일</td>
+          <tr style="text-align: center">
+            <th style="width: 4%">No.</th>
+            <th>제목</th>
+            <th style="width: 13%">작성일</th>
           </tr>
         </thead>
-        <tbody>
-          <div v-for="(form, i) in forms" :key="form.id">
-            <td style="width: 4%; text-align: center;">{{ forms.length - i }}</td>
-            <td style="width: 93%"><span @click="moveToPage(form.id)" style="cursor: pointer">{{ form.title }}</span></td>
-            <td style="width: 5%">{{ form.createdAt }}</td>
-          </div>
+        <tbody v-for="(form, i) in forms" :key="form.id">
+          <td style="text-align: center;">{{ forms.length - i }}</td>
+          <td><span @click="moveToPage(form.id)" style="cursor: pointer">{{ form.title }}</span></td>
+          <td style="text-align: center">{{ form.createdAt }}</td>
         </tbody>
       </table>
     </form>
@@ -164,7 +162,7 @@ hr {
 .margin {
   width: 70%;
   margin: auto;
-  height: 637px;
+  height: 618px;
 }
 .modal-wrapper {
   position: fixed;
@@ -176,7 +174,7 @@ hr {
   background: rgba(0, 0, 0, 0.5);
 }
 .form {
-  width: 85%;
+  width: 75%;
   margin: auto;
 }
 </style>
