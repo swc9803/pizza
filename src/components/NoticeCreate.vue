@@ -17,8 +17,8 @@
           </div>
         </div>
       </form>
-      <div v-if="user != ''">
         <button class="btn btn-danger m-3" @click="moveToNotice">취소</button>
+      <div v-if="user != ''">
         <button class="btn btn-primary m-3" @click="saveform">저장</button>
       </div>
       <div v-else class="card mt-3">
@@ -41,7 +41,6 @@ export default {
     const createdAt = currentDate.getFullYear() + '-' + ('0' + (1 + currentDate.getMonth())).slice(-2) + '-' + ('0' + currentDate.getDate()).slice(-2)
     const title = ref('')
     const content = ref('')
-    const views = 0
 
     const saveform = async () => {
       if (title.value === '' || content.value === '') {
@@ -49,7 +48,7 @@ export default {
       } else {
         await db.collection('forms').add(
           {
-            title: title.value, content: content.value, realcreatedAt, createdAt, views
+            title: title.value, content: content.value, realcreatedAt, createdAt
           }
         )
         alert('작성 완료!')
@@ -91,8 +90,9 @@ export default {
 <style scoped>
 .center {
   height: 618px;
-  width: 75%;
+  width: 70%;
   margin: 0 auto;
+  color: rgb(190, 240, 192);;
 }
 .card {
   width: 50%;

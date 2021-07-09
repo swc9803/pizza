@@ -3,50 +3,50 @@
     <h2 class="notice">공지사항</h2>
     <div class="but">
       <div v-if="user == ''">
-        <button class="btn btn-primary" @click="openModal" style="position: absolute;">
+        <button class="btn btn-secondary" @click="openModal" style="position: absolute;">
           글쓰기
         </button>
       </div>
       <div v-else>
-        <button class="btn btn-primary" @click="moveToCreate" style="position: absolute;">
+        <button class="btn btn-secondary" @click="moveToCreate" style="position: absolute;">
           글쓰기
         </button>
       </div>
     </div>
     <hr>
     <form class="form">
-      <div v-if="loading" class="form">
+      <div v-if="loading" class="m-5">
         <div class="spinner-border text-primary" role="status"></div> Loading
       </div>
-      <table v-else class="table">
+      <table v-else class="table mt-4">
         <thead>
           <tr>
-            <th>No.</th>
-            <th>제목</th>
-            <th>작성일</th>
+            <td>No.</td>
+            <td>제목</td>
+            <td>작성일</td>
           </tr>
         </thead>
         <tbody>
           <div v-for="(form, i) in forms" :key="form.id">
-            <th>{{ forms.length - i }}</th>
-            <td style="cursor: pointer" @click="moveToPage(form.id)">{{ form.title }}</td>
-            <td>{{ form.createdAt }}</td>
+            <td style="width: 4%; text-align: center;">{{ forms.length - i }}</td>
+            <td style="width: 93%"><span @click="moveToPage(form.id)" style="cursor: pointer">{{ form.title }}</span></td>
+            <td style="width: 5%">{{ form.createdAt }}</td>
           </div>
         </tbody>
       </table>
     </form>
     <div v-if="showModal">
-      <div class="modal-wrapper" style="color: cyan;">
+      <div class="modal-wrapper">
         <div class="modal-dialog">
-          <div class="modal-content" style="background: rgb(50, 50, 50)">
+          <div class="modal-content" style="background: rgb(50, 50, 50); color: cyan;">
             <div class="modal-header m-2">
               <h6 class="modal-title"><i class="fas fa-sign-out-alt"></i> 관리자만 글을 작성할 수 있습니다.</h6>
             </div>
-            <div class="form form-group modal-body">
+            <div class="modal-body">
               <label>Email</label>
               <input type="email" v-model="email" class="form-control">
             </div>
-            <div class="form form-group modal-body">
+            <div class="modal-body">
               <label>Password</label>
               <input type="password" v-model="password" class="form-control">
             </div>
@@ -144,13 +144,10 @@ export default {
 </script>
 
 <style scoped>
-table {
+table, th, td {
   color: rgb(190, 240, 192);
-  background: rgb(41, 41, 41);
-  margin: 0 auto;
-}
-td {
-  padding: 5px;
+  background: rgb(40, 40, 40);
+  border: 1px solid rgb(190, 240, 192);
 }
 .notice {
   color: rgba(223,190,106);
@@ -167,6 +164,7 @@ hr {
 .margin {
   width: 70%;
   margin: auto;
+  height: 637px;
 }
 .modal-wrapper {
   position: fixed;

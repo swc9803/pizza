@@ -1,38 +1,36 @@
 <template>
-  <div v-if="loading" class="form mt-5">
-    <div class="spinner-border text-primary" role="status"></div> Loading
-  </div>
-  <div v-else>
-    <form class="form" style="color: black">
-      <div class="title card mt-4">
-        {{ title }}
-      </div>
-      <div class="card">
-        <div class="ml-2 mb-1">
+  <div class="margin">
+    <h2 class="notice">공지사항</h2>
+    <hr>
+    <div v-if="loading" class="m-5">
+      <div class="spinner-border text-primary" role="status"></div> Loading
+    </div>
+    <div v-else>
+      <form style="color: rgb(190, 240, 192)">
+        <div class="card title">
+          {{ title }}
+        </div>
+        <div class="card">
           작성일 : {{ createdAt }}
         </div>
-        <span>
-          조회수 : {{ views }}
-        </span>
-      </div>
-      <div class="card mt-4" style="height: 400px">
-        <div class="ml-2" style="white-space: pre-line">
+        <div class="card content">
           {{ content }}
         </div>
+
+        <div v-if="user !== ''">
+          <button @click.prevent="openModal" class="btn btn-danger mt-3" style="float: right">삭제</button>
+        </div>
+        <div class="goNotice mt-3" @click="moveToNotice">
+          <i class="fas fa-list"></i> 목록
+        </div>
+      </form>
+      <div class="btn">
+        <NoticeDeleteModal
+          v-if="showModal"
+          @close="closeModal"
+          @delete="Deleteform"
+        />
       </div>
-      <div v-if="uid !== ''">
-        <button @click.prevent="openModal" class="btn btn-danger mt-3" style="float: right">삭제</button>
-      </div>
-      <div class="goNotice mt-3" @click="moveToNotice">
-        <i class="fas fa-list"></i> 목록
-      </div>
-    </form>
-    <div class="btn">
-      <NoticeDeleteModal
-        v-if="showModal"
-        @close="closeModal"
-        @delete="Deleteform"
-      />
     </div>
   </div>
 </template>
@@ -58,7 +56,6 @@ export default {
     const title = ref('')
     const content = ref('')
     const createdAt = ref('')
-    const views = ref('')
 
     const openModal = () => {
       showModal.value = true
@@ -71,22 +68,6 @@ export default {
         name: 'Notice'
       })
     }
-
-    onMounted(async () => {
-      const noticeinfo = db.collection('forms').doc(route.params.id)
-      const doc = await noticeinfo.get()
-      title.value = doc.data().title
-      content.value = doc.data().content
-      createdAt.value = doc.data().createdAt
-      views.value = doc.data().views
-      await db.collection('forms').doc(route.params.id).update(
-        {
-          views: (views.value + 1)
-        }
-      )
-      loading.value = false
-    })
-
     const Deleteform = async () => {
       await db.collection('forms').doc(route.params.id).delete().then(() => {
         alert('정상적으로 삭제되었습니다.')
@@ -96,6 +77,16 @@ export default {
         })
       })
     }
+
+    onMounted(async () => {
+      const noticeinfo = db.collection('forms').doc(route.params.id)
+      const doc = await noticeinfo.get()
+      title.value = doc.data().title
+      content.value = doc.data().content
+      createdAt.value = doc.data().createdAt
+      loading.value = false
+    })
+
     return {
       loading,
       showModal,
@@ -106,8 +97,7 @@ export default {
       name,
       title,
       content,
-      createdAt,
-      views
+      createdAt
     }
   },
   components: {
@@ -125,11 +115,33 @@ export default {
 }
 </script>
 
-<style>
-.form {
+<style scoped>
+.notice {
+  color: rgba(223,190,106);
+  font-size: 30px;
+  text-align: center;
+}
+.margin {
   width: 70%;
-  height: 570px;
   margin: auto;
+}
+hr {
+  height: 4px;
+  background: linear-gradient(270deg, rgba(34,34,34,0), rgba(146,111,52,0.8), rgb(255, 217, 120), rgba(146,111,52,0.8), rgba(34,34,34,0));
+}
+.card {
+  background: rgb(41, 41, 41);
+  border: 1px ;
+  white-space: pre-line;
+  border: 1px solid rgb(190, 240, 192);
+  padding: 7px;
+}
+.title {
+  font-size: 17.4px;
+  font-weight: bold;
+}
+.content {
+  height: 400px;
 }
 .goNotice {
   color: rgba(223,190,106,0.7);
@@ -151,5 +163,8 @@ export default {
   border: 1px solid rgba(223,190,106,0);
   color: white;
   background-position: 99% 50%;
+}
+.m-5 {
+  height: 533px;
 }
 </style>
