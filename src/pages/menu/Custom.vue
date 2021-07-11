@@ -2,104 +2,112 @@
   <div>
     <Menunavbar />
     <div class="margin mt-5">
-      <div class="check">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" v-model="checkAll">
-          <label>전체 선택</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="치즈" v-model="checked">
-          <label>치즈 추가</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="올리브" v-model="checked">
-          <label>올리브</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="감자" v-model="checked">
-          <label>웨지감자</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="베이컨" v-model="checked">
-          <label>베이컨</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="양파" v-model="checked">
-          <label>양파</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="버섯" v-model="checked">
-          <label>버섯</label>
-        </div><br>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="새우" v-model="checked">
-          <label>새우</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="페퍼로니" v-model="checked">
-          <label>페퍼로니</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="피망" v-model="checked">
-          <label>피망</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="가지" v-model="checked">
-          <label>가지</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" value="파인애플" v-model="checked">
-          <label>파인애플</label>
-        </div>
+      <img src="@/assets/menucustom.jpg" class="foundation">
+      <div>
+        <transition name="fade">
+          <Tomato v-if="Tomato" class="toppings" style="z-index: 1"/>
+        </transition>
+        <transition name="fade">
+          <Olive v-if="Olive" class="toppings" style="z-index: 2"/>
+        </transition>
+        <transition name="fade">
+          <Potato v-if="Potato" class="toppings" style="z-index: 3"/>
+        </transition>
       </div>
-      <div class="box">
-        <span>체크한 것 : {{ checked }}</span>
+      <div class="flex mt-3">
+        <img src="@/assets/topping/all.png" class="toggle" @click="Allon">
+        <img src="@/assets/topping/tomato.png" class="toggle" @click="Tomato = !Tomato">
+        <img src="@/assets/topping/olive.png" class="toggle" @click="Olive = !Olive">
+        <img src="@/assets/topping/potato.png" class="toggle" @click="Potato = !Potato">
+        <img src="@/assets/topping/bacon.png" class="toggle" @click="Olive = !Olive">
+        <img src="@/assets/topping/onion.png" class="toggle" @click="Tomato = !Tomato">
+        <img src="@/assets/topping/mushroom.png" class="toggle" @click="Olive = !Olive">
+        <img src="@/assets/topping/shrimp.png" class="toggle" @click="Tomato = !Tomato">
+        <img src="@/assets/topping/pepperoni.png" class="toggle" @click="Olive = !Olive">
+        <img src="@/assets/topping/pimento.png" class="toggle" @click="Tomato = !Tomato">
+        <img src="@/assets/topping/pineapple.png" class="toggle" @click="Olive = !Olive">
+        <img src="@/assets/topping/cancel.png" class="toggle" @click="Alloff">
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Menunavbar from '@/components/Menunavbar'
 import { ref } from 'vue'
+import Menunavbar from '@/components/Menunavbar'
+import Tomato from '@/components/toppings/Tomato'
+import Olive from '@/components/toppings/Olive'
+import Potato from '@/components/toppings/Potato'
 
 export default {
-  // data () {
-  //   return {
-  //     checked: []
-  //   }
-  // },
-  setup () {
-    const checked = ref([])
-    return {
-      checked
-    }
-  },
   components: {
-    Menunavbar
+    Menunavbar,
+    Tomato,
+    Olive,
+    Potato
+  },
+  setup () {
+    const Tomato = ref(false)
+    const Olive = ref(false)
+    const Potato = ref(false)
+
+    const Allon = () => {
+      Tomato.value = true
+      Olive.value = true
+      Potato.value = true
+    }
+    const Alloff = () => {
+      Tomato.value = false
+      Olive.value = false
+      Potato.value = false
+    }
+
+    return {
+      Allon,
+      Alloff,
+      Tomato,
+      Olive,
+      Potato
+    }
   }
 }
 </script>
 
 <style scoped>
 .margin {
-  width: 70%;
+  width: 80%;
+  height: 800px;
   margin: auto;
 }
-.box {
-  width: 70%;
-  height: 600px;
-  background: rgb(125, 128, 128);
+.foundation {
+  position: absolute;
+  width: 40%;
+  z-index: 0;
 }
-.check {
-  width: 28%;
-  float: right;
+.toppings {
+  position: absolute;
+  width: 761.2px;
+  height: 761.2px;
+}
+.toggle {
+  width: 165px;
+  height: 130px;
+  margin: 10px;
+}
+.flex {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  margin: 5px;
+  width: 40%;
+  float: right;
 }
-.form-check {
-  width: 30%;
-  margin: 8px;
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .3s
 }
 </style>

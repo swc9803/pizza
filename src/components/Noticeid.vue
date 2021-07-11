@@ -6,7 +6,7 @@
       <div class="spinner-border text-primary" role="status"></div> Loading
     </div>
     <div v-else>
-      <form style="color: rgb(190, 240, 192)">
+      <form style="color: black;">
         <div class="card title">
           {{ title }}
         </div>
@@ -16,7 +16,6 @@
         <div class="card content">
           {{ content }}
         </div>
-
         <div v-if="user !== ''">
           <button @click.prevent="openModal" class="btn btn-danger mt-3" style="float: right">삭제</button>
         </div>
@@ -130,11 +129,11 @@ hr {
   background: linear-gradient(270deg, rgba(34,34,34,0), rgba(146,111,52,0.8), rgb(255, 217, 120), rgba(146,111,52,0.8), rgba(34,34,34,0));
 }
 .card {
-  background: rgb(41, 41, 41);
   border: 1px ;
   white-space: pre-line;
-  border: 1px solid rgb(190, 240, 192);
+  border: 1px solid rgb(0, 0, 0);
   padding: 7px;
+  background: rgb(230, 230, 230);
 }
 .title {
   font-size: 17.4px;

@@ -143,9 +143,10 @@ export default {
 
 <style scoped>
 table, th, td {
-  color: rgb(190, 240, 192);
-  background: rgb(40, 40, 40);
-  border: 1px solid rgb(190, 240, 192);
+  color: rgb(0, 0, 0);
+  background: rgb(230, 230, 230);
+  border: 1px solid rgb(0, 0, 0);
+  padding: 3px;
 }
 .notice {
   color: rgba(223,190,106);

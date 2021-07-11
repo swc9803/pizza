@@ -9,12 +9,12 @@
       <div/><div class="adjust">
         <img src="@/assets/produce.png" class="before1" alt="produce">
         <img src="@/assets/domestic.png" class="after" alt="domestic">
-        <p class="text">Domestic<br>Ingredients</p>
+        <p>Domestic<br>Ingredients</p>
       </div>
       <div class="adjust">
         <img src="@/assets/cheap.png" class="before2" alt="cheap">
         <img src="@/assets/money.png" class="after" alt="money">
-        <p class="text">Reasonable<br>Price</p>
+        <p>Reasonable<br>Price</p>
       </div>
       <div class="adjust">
         <img src="@/assets/mask.png" class="before3" alt="mask">

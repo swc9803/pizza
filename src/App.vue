@@ -3,7 +3,7 @@
     <div>
       <Navbar />
     </div>
-    <div class="mt">
+    <div style="padding-top: 145px">
       <router-view/>
     </div>
     <div>
@@ -31,16 +31,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgb(40, 40, 40);
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   position: absolute;
-  width:100%;
+  width: 100%;
   color: white;
 }
 a.router-link-active {
   border-bottom: 2px solid yellow;
-}
-.mt {
-  padding-top: 145px;
 }
 </style>

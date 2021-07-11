@@ -5,15 +5,27 @@
       <br><b>직접 만드는 나만의 피자</b>
     </div>
     이미지
-    <div class="goMenu mt-4" @click="moveToMenu">
+    <div class="goMenu mt-4" @click="moveToCustom">
       피자 만들러 가기
     </div>
   </div>
 </template>
 
 <script>
-export default {
+import { useRouter } from 'vue-router'
 
+export default {
+  setup () {
+    const router = useRouter()
+    const moveToCustom = () => {
+      router.push({
+        name: 'Custom'
+      })
+    }
+    return {
+      moveToCustom
+    }
+  }
 }
 </script>
 
