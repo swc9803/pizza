@@ -12,10 +12,10 @@
       </span>
     </div>
     <hr class="mt-5 mb-4">
-    <div style="font-size: 16px">
+    <div>
       <i class="fas fa-arrow-circle-right mb-4" style="color: rgb(255, 132, 60);"></i>
       <span class="tabledetail"> 가게 상세정보</span><br>
-      <table>
+      <table style="width: 100%">
         <tbody>
           <tr>
             <th>가게 주소</th>

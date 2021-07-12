@@ -1,18 +1,6 @@
 <template>
   <div class="margin">
     <h2 class="notice">공지사항</h2>
-    <div class="but">
-      <div v-if="user == ''">
-        <button class="btn btn-secondary" @click="openModal" style="position: absolute;">
-          글쓰기
-        </button>
-      </div>
-      <div v-else>
-        <button class="btn btn-secondary" @click="moveToCreate" style="position: absolute;">
-          글쓰기
-        </button>
-      </div>
-    </div>
     <hr>
     <form class="form">
       <div v-if="loading" class="m-5">
@@ -33,6 +21,18 @@
         </tbody>
       </table>
     </form>
+    <div class="mt-5">
+      <div v-if="user == ''">
+        <button class="btn btn-secondary" @click="openModal" style="position: absolute;">
+          글쓰기
+        </button>
+      </div>
+      <div v-else>
+        <button class="btn btn-secondary" @click="moveToCreate" style="position: absolute;">
+          글쓰기
+        </button>
+      </div>
+    </div>
     <div v-if="showModal">
       <div class="modal-wrapper">
         <div class="modal-dialog">
@@ -152,9 +152,6 @@ table, th, td {
   color: rgba(223,190,106);
   font-size: 30px;
   text-align: center;
-}
-.but {
-  float: right;
 }
 hr {
   height: 4px;
