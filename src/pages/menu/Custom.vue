@@ -119,28 +119,27 @@ export default {
 <style scoped>
 .margin {
   width: 80%;
-  height: 800px;
+  height: 680px;
   margin: auto;
 }
 .foundation {
   position: absolute;
-  width: 45%;
+  width: 40%;
   z-index: 0;
 }
 .toppings {
   position: absolute;
-  width: 45%;
+  width: 40%;
 }
 .toggle {
-  width: 165px;
-  height: 130px;
+  width: 30%;
   margin: 10px;
 }
 .flex {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 40%;
+  width: 42%;
   float: right;
 }
 

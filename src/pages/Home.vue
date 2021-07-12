@@ -6,7 +6,7 @@
     <div>
       <Description />
     </div>
-    <div>
+    <div style="background: rgb(40, 40, 40);#2c2c2c">
       <Menu />
     </div>
   </div>

@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/pages/Home'
-import Test from '@/pages/Test'
 import Pizza from '@/pages/menu/Pizza'
 import Pasta from '@/pages/menu/Pasta'
 import Side from '@/pages/menu/Side'
@@ -13,11 +12,6 @@ import NoticeCreate from '@/components/NoticeCreate'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    {
-      path: '/test',
-      name: 'Test',
-      component: Test
-    },
     {
       path: '/',
       name: 'Home',

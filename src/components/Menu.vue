@@ -1,10 +1,10 @@
 <template>
-  <div class="menu">
+  <div style="background: rgb(42,42,42);">
     <hr>
     <div class="mt-5" style="text-align: center">
-      <br><b>직접 만드는 나만의 피자</b>
+      <br><b>직접 만드는 나만의 피자</b><br><br>
+    <img src="@/assets/커스텀예시.png" style="width: 80%">
     </div>
-    이미지
     <div class="goMenu mt-4" @click="moveToCustom">
       피자 만들러 가기
     </div>
@@ -30,9 +30,6 @@ export default {
 </script>
 
 <style scoped>
-.menu {
-  height: 500px;
-}
 hr {
   height: 4px;
   background: linear-gradient(270deg, rgba(34,34,34,0), rgba(146,111,52,0.8), rgb(255, 217, 120), rgba(146,111,52,0.8), rgba(34,34,34,0));
