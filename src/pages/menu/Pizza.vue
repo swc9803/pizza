@@ -2,11 +2,11 @@
   <div>
     <Menunavbar />
     <div class="flex mt-4">
-      <img src="@/assets/menupizza.jpg" class="box" alt="menupizza">
-      <img src="@/assets/menupizza.jpg" class="box" alt="menupizza">
-      <img src="@/assets/menupizza.jpg" class="box" alt="menupizza">
-      <img src="@/assets/menupizza.jpg" class="box" alt="menupizza">
-      <img src="@/assets/menupizza.jpg" class="box" alt="menupizza">
+      <img src="@/assets/menupizza.png" class="box" alt="menupizza">
+      <img src="@/assets/menupizza.png" class="box" alt="menupizza">
+      <img src="@/assets/menupizza.png" class="box" alt="menupizza">
+      <img src="@/assets/menupizza.png" class="box" alt="menupizza">
+      <img src="@/assets/menupizza.png" class="box" alt="menupizza">
       <img src="@/assets/custom.jpg" class="box" @click="moveToCustom" style="cursor: pointer" alt="custom">
     </div>
     <div class="flex" style="height: 180px">

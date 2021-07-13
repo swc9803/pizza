@@ -9,25 +9,25 @@
       </div>
       <div class="slide carousel-inner">
         <div class="carousel-item active">
-          <img src="@/assets/치즈피자.jpg" class="d-block w-100" alt="치즈피자">
+          <img src="@/assets/슬라이드1.png" class="d-block w-100" alt="슬라이드1">
           <div class="carousel-caption d-none d-md-block">
-            <p>치즈피자 이미지1</p>
+            <p>피자 이미지1</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="@/assets/페페로니피자.jpg" class="d-block w-100" alt="페페로니피자">
+          <img src="@/assets/슬라이드2.png" class="d-block w-100" alt="슬라이드2">
           <div class="carousel-caption d-none d-md-block">
-            <p>페페로니피자 이미지2</p>
+            <p>피자 이미지2</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="@/assets/파스타.jpg" class="d-block w-100" alt="파스타">
+          <img src="@/assets/슬라이드3.png" class="d-block w-100" alt="슬라이드3">
           <div class="carousel-caption d-none d-md-block">
             <p>파스타 이미지3</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="@/assets/스파게티.jpg" class="d-block w-100" alt="스파게티">
+          <img src="@/assets/슬라이드4.png" class="d-block w-100" alt="슬라이드4">
           <div class="carousel-caption d-none d-md-block">
             <p>스파게티 이미지4</p>
           </div>
