@@ -29,7 +29,7 @@
         <div class="carousel-item">
           <img src="@/assets/슬라이드4.png" class="d-block w-100" alt="슬라이드4">
           <div class="carousel-caption d-none d-md-block">
-            <p>스파게티 이미지4</p>
+            <p>파스타 이미지4</p>
           </div>
         </div>
       </div>
@@ -60,20 +60,6 @@ export default {
       })
     }
 
-    var beforePosition = document.documentElement.scrollTop
-    document.addEventListener('scroll', function () {
-      var afterPosition = document.documentElement.scrollTop
-      if (afterPosition > 50) {
-        if (beforePosition < afterPosition) {
-          // 스크롤 위로
-        } else {
-          // moveToMenu()
-        }
-      } else {
-        // 평상 시
-      }
-      beforePosition = afterPosition
-    })
     return {
       moveToMenu
     }

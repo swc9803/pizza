@@ -8,22 +8,42 @@
     <div class="hov mt-5">
       <div/><div class="adjust">
         <img src="@/assets/produce.png" class="before1" alt="produce">
-        <img src="@/assets/domestic.png" class="after" alt="domestic">
+        <img src="@/assets/domestic.png" class="after" alt="domestic" @click="change1">
         <p>Domestic<br>Ingredients</p>
       </div>
       <div class="adjust">
         <img src="@/assets/cheap.png" class="before2" alt="cheap">
-        <img src="@/assets/money.png" class="after" alt="money">
+        <img src="@/assets/money.png" class="after" alt="money" @click="change2">
         <p>Reasonable<br>Price</p>
       </div>
       <div class="adjust">
         <img src="@/assets/mask.png" class="before3" alt="mask">
-        <img src="@/assets/safety.png" class="after" alt="safety">
+        <img src="@/assets/safety.png" class="after" alt="safety" @click="change3">
         <p>Safety<br>Commitment</p>
       </div><div/>
     </div>
   </div>
 </template>
+
+<script>
+
+export default {
+  setup () {
+    const change1 = () => {
+      document.querySelector('.fixed, .fixed2, .fixed3').className = 'fixed1'
+    }
+    const change2 = () => {
+      document.querySelector('.fixed, .fixed1, .fixed3').className = 'fixed2'
+    }
+    const change3 = () => {
+      document.querySelector('.fixed, .fixed1, .fixed2').className = 'fixed3'
+    }
+    return {
+      change1, change2, change3
+    }
+  }
+}
+</script>
 
 <style scoped>
 .description {
@@ -33,6 +53,33 @@
   width: 100%;
   height: 40%;
   background-image: url('~@/assets/pizza.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.fixed1 {
+  width: 100%;
+  height: 40%;
+  background-image: url('~@/assets/pizza1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.fixed2 {
+  width: 100%;
+  height: 40%;
+  background-image: url('~@/assets/pizza2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.fixed3 {
+  width: 100%;
+  height: 40%;
+  background-image: url('~@/assets/pizza3.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -96,6 +143,7 @@ b {
   }
 }
 .after {
+  cursor: pointer;
   border-radius: 70%;
   width: 14%;
   position: absolute;
