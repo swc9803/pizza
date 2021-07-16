@@ -1,37 +1,40 @@
 <template>
   <div>
     <Menunavbar />
+    <div>
+      <transition name="fade" mode="out-in" />
+    </div>
     <div class="margin mt-5">
       <img src="@/assets/menucustom.jpg" class="foundation">
       <div>
-        <transition name="fade">
+        <transition name="tfade">
           <img src="@/assets/option/토마토.png" v-if="Tomato" class="toppings" style="z-index: 2"/>
         </transition>
-        <transition name="fade">
+        <transition name="tfade">
           <img src="@/assets/option/올리브.png" v-if="Olive" class="toppings" style="z-index: 1"/>
         </transition>
-        <transition name="fade">
+        <transition name="tfade">
           <img src="@/assets/option/감자.png" v-if="Potato" class="toppings" style="z-index: 8"/>
         </transition>
-        <transition name="fade">
+        <transition name="tfade">
           <img src="@/assets/option/베이컨.png" v-if="Bacon" class="toppings" style="z-index: 5"/>
         </transition>
-        <transition name="fade">
+        <transition name="tfade">
           <img src="@/assets/option/양파.png" v-if="Onion" class="toppings" style="z-index: 9"/>
         </transition>
-        <transition name="fade">
+        <transition name="tfade">
           <img src="@/assets/option/버섯.png" v-if="Mushroom" class="toppings" style="z-index: 7"/>
         </transition>
-        <transition name="fade">
+        <transition name="tfade">
           <img src="@/assets/option/새우.png" v-if="Shrimp" class="toppings" style="z-index: 10"/>
         </transition>
-        <transition name="fade">
+        <transition name="tfade">
           <img src="@/assets/option/페퍼로니.png" v-if="Pepperoni" class="toppings" style="z-index: 3"/>
         </transition>
-        <transition name="fade">
+        <transition name="tfade">
           <img src="@/assets/option/피망.png" v-if="Pimento" class="toppings" style="z-index: 4"/>
         </transition>
-        <transition name="fade">
+        <transition name="tfade">
           <img src="@/assets/option/파인애플.png" v-if="Pineapple" class="toppings" style="z-index: 6"/>
         </transition>
       </div>
@@ -399,13 +402,18 @@ export default {
   position: fixed;
   right: 10%;
 }
-
-.fade-enter-from,
-.fade-leave-to {
+.fade-enter-from {
   opacity: 0;
 }
-.fade-enter-active,
-.fade-leave-active {
+.fade-enter-active {
+  transition: opacity 0.5s ease-out;
+}
+.tfade-enter-from,
+.tfade-leave-to {
+  opacity: 0;
+}
+.tfade-enter-active,
+.tfade-leave-active {
   transition: opacity .3s
 }
 

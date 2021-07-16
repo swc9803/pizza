@@ -44,14 +44,4 @@ export default {
 a.router-link-active {
   border-bottom: 2px solid yellow;
 }
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-  margin-bottom: -200px;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.15s ease-out;
-  margin-bottom: 0px;
-}
 </style>
