@@ -30,13 +30,13 @@
 export default {
   setup () {
     const change1 = () => {
-      document.querySelector('.fixed, .fixed2, .fixed3').className = 'fixed1'
+      document.querySelector('.fixed, .fixed2, .fixed3').className = 'fixed1 mt-5'
     }
     const change2 = () => {
-      document.querySelector('.fixed, .fixed1, .fixed3').className = 'fixed2'
+      document.querySelector('.fixed, .fixed1, .fixed3').className = 'fixed2 mt-5'
     }
     const change3 = () => {
-      document.querySelector('.fixed, .fixed1, .fixed2').className = 'fixed3'
+      document.querySelector('.fixed, .fixed1, .fixed2').className = 'fixed3 mt-5'
     }
     return {
       change1, change2, change3
