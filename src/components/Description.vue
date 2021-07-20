@@ -26,7 +26,10 @@
 </template>
 
 <script>
-
+import { onMounted } from 'vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 export default {
   setup () {
     const change1 = () => {
@@ -38,6 +41,37 @@ export default {
     const change3 = () => {
       document.querySelector('.fixed, .fixed1, .fixed2').className = 'fixed3 mt-5'
     }
+    onMounted(() => {
+      gsap.from('.before1', {
+        scrollTrigger: {
+          trigger: '.before1',
+          toggleActions: 'restart none reverse none'
+        },
+        y: 500,
+        opacity: 0,
+        duration: 1
+      })
+      gsap.from('.before2', {
+        scrollTrigger: {
+          trigger: '.before2',
+          toggleActions: 'restart none reverse none'
+        },
+        y: 500,
+        opacity: 0,
+        duration: 1,
+        delay: 0.3
+      })
+      gsap.from('.before3', {
+        scrollTrigger: {
+          trigger: '.before3',
+          toggleActions: 'restart none reverse none'
+        },
+        y: 500,
+        opacity: 0,
+        duration: 1,
+        delay: 0.6
+      })
+    })
     return {
       change1, change2, change3
     }
@@ -103,44 +137,17 @@ b {
 .before1 {
   width: 14%;
   position: absolute;
-  -webkit-animation: before 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s both;
-  animation: before 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s both;
+  opacity: 1;
 }
 .before2 {
   width: 14%;
   position: absolute;
-  -webkit-animation: before 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5 both;
-  animation: before 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s both;
+  opacity: 1;
 }
 .before3 {
   width: 14%;
   position: absolute;
-  -webkit-animation: before 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8 both;
-  animation: before 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s both;
-}
-@-webkit-keyframes before {
-  0% {
-    -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes before {
-  0% {
-    -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
+  opacity: 1;
 }
 .after {
   cursor: pointer;
