@@ -8,6 +8,7 @@
       <img src="@/assets/menucustom.jpg" class="foundation">
       <div>
         <transition name="tfade">
+          <!-- <Tomato v-if="Tomato" class="toppings" style="z-index: 2" /> -->
           <img src="@/assets/option/토마토.png" v-if="Tomato" class="toppings" style="z-index: 2"/>
         </transition>
         <transition name="tfade">
@@ -109,10 +110,28 @@
 <script>
 import { ref } from 'vue'
 import Menunavbar from '@/components/Menunavbar'
+// import Tomato from '@/components/Tomato'
+// import Olive from '@/components/Olive'
+// import Potato from '@/components/Potato'
+// import Bacon from '@/components/Bacon'
+// import Onion from '@/components/Onion'
+// import Mushroom from '@/components/Mushroom'
+// import Shrimp from '@/components/Shrimp'
+// import Peeperoni from '@/components/Peeperoni'
+// import Pineapple from '@/components/Pineapple'
 
 export default {
   components: {
     Menunavbar
+  //   Tomato,
+  //   Olive,
+  //   Potato,
+  //   Bacon,
+  //   Onion,
+  //   Mushroom,
+  //   Shrimp,
+  //   Peeperoni,
+  //   Pineapple
   },
   setup () {
     const Tomatoalert = ref(false)

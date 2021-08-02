@@ -60,11 +60,33 @@
 <script>
 import Symbol from '@/components/navbar/Symbol'
 import SymbolText from '@/components/navbar/SymbolText'
+import { onMounted } from 'vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 export default {
   components: {
     Symbol,
     SymbolText
+  },
+  setup () {
+    onMounted(() => {
+      // 위로 스크롤 시 navbar 위로
+      const showAnim = gsap.from('nav', {
+        yPercent: -100,
+        paused: true,
+        duration: 0.5
+      }).progress(1)
+
+      ScrollTrigger.create({
+        start: 'top top',
+        end: 99999,
+        onUpdate: (self) => {
+          self.direction === -1 ? showAnim.play() : showAnim.reverse()
+        }
+      })
+    })
   }
 }
 </script>
