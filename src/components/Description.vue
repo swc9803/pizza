@@ -5,22 +5,24 @@
       <br><b>The best pizza restaurant in the world</b>
     </div>
     <div class="fixed mt-5" />
-    <div class="hov mt-5">
-      <div/><div class="adjust">
-        <img src="@/assets/produce.png" class="before1" alt="produce">
-        <img src="@/assets/domestic.png" class="after" alt="domestic" @click="change1">
-        <p>Domestic<br>Ingredients</p>
+    <div class="up">
+      <div class="hov mt-5">
+        <div/><div class="adjust">
+          <img src="@/assets/produce.png" class="before1" alt="produce">
+          <img src="@/assets/domestic.png" class="after" alt="domestic" @click="change1">
+          <p>Domestic<br>Ingredients</p>
+        </div>
+        <div class="adjust">
+          <img src="@/assets/cheap.png" class="before2" alt="cheap">
+          <img src="@/assets/money.png" class="after" alt="money" @click="change2">
+          <p>Reasonable<br>Price</p>
+        </div>
+        <div class="adjust">
+          <img src="@/assets/mask.png" class="before3" alt="mask">
+          <img src="@/assets/safety.png" class="after" alt="safety" @click="change3">
+          <p>Safety<br>Commitment</p>
+        </div><div/>
       </div>
-      <div class="adjust">
-        <img src="@/assets/cheap.png" class="before2" alt="cheap">
-        <img src="@/assets/money.png" class="after" alt="money" @click="change2">
-        <p>Reasonable<br>Price</p>
-      </div>
-      <div class="adjust">
-        <img src="@/assets/mask.png" class="before3" alt="mask">
-        <img src="@/assets/safety.png" class="after" alt="safety" @click="change3">
-        <p>Safety<br>Commitment</p>
-      </div><div/>
     </div>
   </div>
 </template>
@@ -29,7 +31,7 @@
 import { onMounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
+
 export default {
   setup () {
     const change1 = () => {
@@ -42,35 +44,13 @@ export default {
       document.querySelector('.fixed, .fixed1, .fixed2').className = 'fixed3 mt-5'
     }
     onMounted(() => {
-      gsap.from('.before1', {
-        scrollTrigger: {
-          trigger: '.before1',
-          toggleActions: 'restart none reverse none'
-        },
-        y: 500,
-        opacity: 0,
-        duration: 1
+      const up = gsap.timeline()
+      ScrollTrigger.create({
+        animation: up,
+        trigger: '.up',
+        start: 'bottom 90%'
       })
-      gsap.from('.before2', {
-        scrollTrigger: {
-          trigger: '.before2',
-          toggleActions: 'restart none reverse none'
-        },
-        y: 500,
-        opacity: 0,
-        duration: 1,
-        delay: 0.3
-      })
-      gsap.from('.before3', {
-        scrollTrigger: {
-          trigger: '.before3',
-          toggleActions: 'restart none reverse none'
-        },
-        y: 500,
-        opacity: 0,
-        duration: 1,
-        delay: 0.6
-      })
+      up.from('.up', { yPercent: 80, opacity: 0, duration: 1, ease: 'none' })
     })
     return {
       change1, change2, change3
